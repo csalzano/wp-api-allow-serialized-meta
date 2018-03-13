@@ -15,7 +15,7 @@
 defined( 'ABSPATH' ) OR exit;
 
 function rest_allow_serialized_meta_for_authenticated_users( $value, $meta_value, $request ) {
-	if( ! is_serialized( $meta_value ) ) {
+	if( ! is_serialized( $meta_value ) && ! is_array( $meta_value ) ) {
 		return $value;
 	}
 
