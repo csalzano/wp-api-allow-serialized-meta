@@ -1,9 +1,10 @@
 <?php
+defined( 'ABSPATH' ) or exit;
 /**
  * Plugin Name: WP REST API - Allow Serialized Meta Values
- * Plugin URI: https://github.com/mistercorey/
+ * Plugin URI: https://github.com/csalzano
  * Description: Modify the behavior of my forked version of the `WP REST API - Meta Endpoints` plugin to allow authenticated users access to serialized meta data via the REST API.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Corey Salzano
  * Author URI: https://profiles.wordpress.org/salzano
  * Text Domain: rest-allow-serialized-meta-values
@@ -11,8 +12,6 @@
  * License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
-
-defined( 'ABSPATH' ) OR exit;
 
 function rest_allow_serialized_meta_for_authenticated_users( $value, $meta_value, $request ) {
 	if( ! is_serialized( $meta_value ) && ! is_array( $meta_value ) ) {
